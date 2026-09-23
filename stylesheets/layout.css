@@ -1,0 +1,48 @@
+@font-face {
+  font-family: "CyGrotesk";
+  src:
+    url("../fonts/cy-grotesk-grand-dark_1.woff") format("woff"),
+    url("../fonts/cy-grotesk-grand-dark.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "InterMedium";
+  src:
+    url("../fonts/Inter_18pt-Medium.woff") format("woff"),
+    url("../fonts/Inter_18pt-Medium.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "InterBold";
+  src:
+    url("../fonts/Inter_28pt-Bold.woff") format("woff"),
+    url("../fonts/Inter_28pt-Bold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "InterSemiBold";
+  src:
+    url("../fonts/Inter_28pt-SemiBold.woff") format("woff"),
+    url("../fonts/Inter_28pt-SemiBold.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "InterRegular";
+  src:
+    url("../fonts/Inter_24pt-Regular.woff") format("woff"),
+    url("../fonts/Inter_24pt-Regular.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Unbounded";
+  src:
+    url("../fonts/Unbounded-ExtraBold.woff") format("woff"),
+    url("../fonts/Unbounded-ExtraBold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
