@@ -1,0 +1,232 @@
+/* ==========================================================================
+   BRICK — animation.css
+   Анимации и переходы
+   ========================================================================== */
+
+/* Логотип: лёгкая пульсация точки над "i" */
+@keyframes logo-dot {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8%); }
+}
+
+.header__logo img {
+  transition: transform 0.3s ease;
+}
+
+.header__logo:hover img {
+  transform: scale(1.03);
+}
+
+/* Hero-иллюстрация — плавное "покачивание" блоков */
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-1.2%); }
+}
+
+.hero__illustration img {
+  animation: float-soft 6s ease-in-out infinite;
+}
+
+/* Каталог: плавное появление цветных плашек сбоку (базовый transition уже в style.css) */
+.catalog__panel {
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.catalog__title,
+.catalog__desc {
+  transition: color 0.35s ease;
+}
+
+/* Кнопки-стрелки: нажатие */
+.catalog__arrow:active .btn-icon,
+.services__control:active {
+  transform: scale(0.92);
+}
+
+/* Карусель сервисов: плавное перемещение трека (transition задаётся динамически в JS) */
+.services__track {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.services__track.no-transition {
+  transition: none;
+}
+
+.services__card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.services__card:hover {
+  transform: translateY(-1.5%);
+  box-shadow: 0 1vw 2.4vw rgba(107, 107, 79, 0.18);
+}
+
+/* Бургер-меню: строки */
+.header__burger-line {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Мобильное меню: плавное появление уже описано в adaptive.css через opacity/transform */
+
+/* Кнопки "О нас" / "Написать" */
+.btn {
+  transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn:hover {
+  box-shadow: 0 0.6vw 1.6vw rgba(107, 107, 79, 0.22);
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+/* Страница 404: мягкое появление блока (работает без JS) */
+@keyframes not-found-in {
+  from { opacity: 0; transform: translateY(3%); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.not-found__content {
+  animation: not-found-in 0.7s ease both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .not-found__content {
+    animation: none;
+  }
+}
+   
+/* Навигация */
+.nav__link {
+  transition: background-color 0.25s ease;
+}
+ 
+.nav__link:hover {
+  background-color: color-mix(in srgb, var(--color-bg) 25%, transparent);
+}
+ 
+/* Кнопки */
+.btn {
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+ 
+.btn:hover,
+.btn:focus-visible {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+ 
+.btn__arrow {
+  transition: transform 0.25s ease;
+}
+ 
+.btn:hover .btn__arrow {
+  transform: translateX(4px) rotate(45deg) scale(0.85);
+}
+ 
+/* Подсветка стрелки на товаре */
+.product__arrow {
+  transition: background-color 0.25s ease, transform 0.25s ease;
+}
+ 
+.product__link:hover .product__arrow,
+.product__link:focus-visible .product__arrow {
+  background-color: var(--color-accent);
+  transform: translateX(3px);
+}
+ 
+.product__img {
+  transition: transform 0.35s ease;
+}
+ 
+.product__link:hover .product__img {
+  transform: scale(1.05);
+}
+ 
+/* Лёгкое парение блоков в шапке */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-1%); }
+}
+ 
+.hero__img {
+  animation: float 6s ease-in-out infinite;
+}
+ 
+/* Бургер */
+.header__burger-bar,
+.header__burger-bar::before,
+.header__burger-bar::after {
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+ 
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+ 
+/* ==========================================================
+   Профиль: анимации
+   ========================================================== */
+ 
+/* Боковое меню */
+.sidebar__link {
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+ 
+.sidebar__link:hover {
+  background-color: color-mix(in srgb, var(--color-text) 15%, transparent);
+}
+ 
+.sidebar__link--active:hover {
+  background-color: var(--color-text);
+}
+ 
+.sidebar__avatar {
+  transition: transform 0.25s ease;
+}
+ 
+.sidebar__avatar:hover {
+  transform: scale(1.05);
+}
+ 
+/* Поля формы */
+.profile-form__input {
+  transition: box-shadow 0.25s ease;
+}
+ 
+.profile-form__input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--color-accent);
+}
+ 
+/* Ссылки и иконки в панелях */
+.panel__link,
+.panel__edit {
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+ 
+.panel__link:hover,
+.panel__edit:hover {
+  opacity: 0.75;
+  transform: translateX(3px);
+}
+ 
+/* Тумблер */
+.switch__slider,
+.switch__slider::before {
+  transition: background-color 0.25s ease, transform 0.25s ease;
+}
+ 
+/* Попап */
+@keyframes popup-in {
+  from { opacity: 0; transform: translateY(-2vh) scale(0.95); }
+  to { opacity: 1; transform: none; }
+}
+ 
+.popup[open] {
+  animation: popup-in 0.3s ease;
+}

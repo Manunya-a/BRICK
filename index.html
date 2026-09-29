@@ -1,13 +1,251 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BRICK</title>
-    <link rel="stylesheet" href="stylesheets/style.css"> 
-    <script defer src="javascripts/scripts.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BRiCK — мебель, которую собирает ребёнок</title>
+  <meta name="description" content="BRiCK — бренд по продаже нестандартной детской мебели, которую может собрать ребёнок без чьей-либо помощи.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/adaptive.css">
+  <link rel="stylesheet" href="css/animation.css">
 </head>
 <body>
-    
+
+  <!-- ==================== Хедер ==================== -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo" aria-label="BRiCK — на главную">
+        <img src="images/logo-brick.svg" alt="BRiCK">
+      </a>
+
+      <nav class="header__nav" id="site-nav">
+        <ul class="header__nav-list">
+          <li><a href="#about" class="header__nav-link">О нас</a></li>
+          <li><a href="#catalog" class="header__nav-link">Каталог</a></li>
+          <li><a href="#contacts" class="header__nav-link">Связь с нами</a></li>
+          <li><a href="#" class="header__nav-link header__nav-link--active">Профиль</a></li>
+        </ul>
+      </nav>
+
+      <button class="header__burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="site-nav">
+        <span class="header__burger-line"></span>
+        <span class="header__burger-line"></span>
+        <span class="header__burger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ==================== Hero ==================== -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <h1 class="hero__title">Собери свою комнату без страха, что она сломается</h1>
+        <p class="hero__subtitle">
+          Бренд по продаже нестандартной детской мебели-мебель, которую может собрать ребенок без чьей-либо помощи
+        </p>
+      </div>
+      <div class="hero__illustration">
+        <img src="images/hero-illustration.svg" alt="Мягкие мебельные блоки BRiCK в форме геометрических фигур">
+      </div>
+    </section>
+
+    <!-- ==================== О нас ==================== -->
+    <section class="about" id="about">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">О нас</h2>
+          <p class="section__subtitle">Узнай больше о бренде</p>
+        </div>
+
+        <div class="about__body">
+          <div class="about__media">
+            <img src="images/about-photo.svg" alt="Ребёнок собирает мягкую мебель BRiCK в детской комнате">
+            <button class="btn btn--accent about__cta js-about-btn" type="button">О нас</button>
+          </div>
+
+          <div class="about__text">
+            <p class="about__paragraph">
+              Бренд по продаже детской нестандартной мебели-мебель, которую может собрать ребенок.
+            </p>
+            <p class="about__paragraph">
+              Каждая деталь продумана так, чтобы, даже если ребенок соберет не правильно, конструкция оставалась надежной и красивой.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== Каталог ==================== -->
+    <section class="catalog" id="catalog">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Каталог</h2>
+          <p class="section__subtitle">Посмотри, что мы предлагаем</p>
+        </div>
+
+        <ul class="catalog__list">
+
+          <li class="catalog__item">
+            <span class="catalog__panel">
+              <img src="images/catalog-panel-furniture.svg" alt="" aria-hidden="true">
+            </span>
+            <div class="catalog__content">
+              <h3 class="catalog__title">Мебель</h3>
+              <p class="catalog__desc">
+                Мебель, которая собирается без других инструментов с понятной инструкцией для ребенка и родителя, а также возможность трансформировать и менять между собой детали для создания собственного дизайна мебели
+              </p>
+            </div>
+            <a href="#catalog" class="catalog__arrow btn-icon" aria-label="Перейти в раздел «Мебель»">
+              <img src="images/icon-arrow-right.svg" alt="">
+            </a>
+          </li>
+
+          <li class="catalog__item">
+            <span class="catalog__panel">
+              <img src="images/catalog-panel-soft.svg" alt="" aria-hidden="true">
+            </span>
+            <div class="catalog__content">
+              <h3 class="catalog__title">Мягкие детали</h3>
+              <p class="catalog__desc">
+                Подушки в разных формах и размерах, которые можно переставлять, трансформировать и составлять из них единую конструкцию
+              </p>
+            </div>
+            <a href="#catalog" class="catalog__arrow btn-icon" aria-label="Перейти в раздел «Мягкие детали»">
+              <img src="images/icon-arrow-right.svg" alt="">
+            </a>
+          </li>
+
+          <li class="catalog__item">
+            <span class="catalog__panel">
+              <img src="images/catalog-panel-decor.svg" alt="" aria-hidden="true">
+            </span>
+            <div class="catalog__content">
+              <h3 class="catalog__title">Декор</h3>
+              <p class="catalog__desc">
+                Приятные мелочи, которые дополнят интерьер и сделают комнату еще более стильной и уютной
+              </p>
+            </div>
+            <a href="#catalog" class="catalog__arrow btn-icon" aria-label="Перейти в раздел «Декор»">
+              <img src="images/icon-arrow-right.svg" alt="">
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <!-- ==================== Сервисы ==================== -->
+    <section class="services">
+      <div class="container">
+        <div class="section__head services__head">
+          <h2 class="section__title">Сервисы</h2>
+          <p class="section__subtitle">Что ещё есть на сайте</p>
+        </div>
+
+        <div class="services__viewport">
+          <ul class="services__track">
+            <li class="services__card">
+              <img class="services__icon" src="images/icon-faq.svg" alt="">
+              <div>
+                <h3 class="services__card-title">Частые вопросы</h3>
+                <p class="services__card-text">Самые популярные вопросы</p>
+              </div>
+            </li>
+            <li class="services__card">
+              <img class="services__icon" src="images/icon-delivery.svg" alt="">
+              <div>
+                <h3 class="services__card-title">Доставка</h3>
+                <p class="services__card-text">Мы доедем быстро</p>
+              </div>
+            </li>
+            <li class="services__card">
+              <img class="services__icon" src="images/icon-envelope.svg" alt="">
+              <div>
+                <h3 class="services__card-title">Сертификаты</h3>
+                <p class="services__card-text">Подари настроение</p>
+              </div>
+            </li>
+            <li class="services__card">
+              <img class="services__icon" src="images/icon-bag.svg" alt="">
+              <div>
+                <h3 class="services__card-title">Каталог</h3>
+                <p class="services__card-text">У нас большой выбор</p>
+              </div>
+            </li>
+            <li class="services__card">
+              <img class="services__icon" src="images/icon-headphones.svg" alt="">
+              <div>
+                <h3 class="services__card-title">Связь с нами</h3>
+                <p class="services__card-text">Просто напиши</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="services__controls">
+          <button class="services__control services__control--prev" type="button" aria-label="Предыдущие карточки">
+            <img src="images/icon-arrow-right.svg" alt="">
+          </button>
+          <button class="services__control services__control--next" type="button" aria-label="Следующие карточки">
+            <img src="images/icon-arrow-right.svg" alt="">
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== Связь с нами ==================== -->
+    <section class="contact" id="contacts">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title contact__title">Связь с нами</h2>
+          <p class="section__subtitle">Напиши нам, мы обязательно ответим</p>
+        </div>
+
+        <div class="contact__body">
+          <div class="contact__media">
+            <div class="contact__photo">
+              <img src="images/contact-photo.svg" alt="Курьер BRiCK разговаривает по телефону у автомобиля доставки">
+            </div>
+            <div class="contact__phone">
+              <img src="images/contact-phone.svg" alt="Профиль BRiCK в мобильном приложении">
+            </div>
+          </div>
+
+          <div class="contact__text">
+            <p class="contact__paragraph">
+              Тебя терзают сомнения по какому-либо вопросу. Не переживай. Мы собрали подборку самых часто-задаваемых вопросов.
+            </p>
+            <p class="contact__paragraph">
+              Если у Вас и после этого остались недопонимания, не беспокойся. Просто напиши нам и мы постараемся все решить.
+            </p>
+            <button class="btn btn--muted contact__btn js-contact-btn" type="button">Написать</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== Футер ==================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__group">
+        <span class="footer__text">Викулина Мария</span>
+        <span class="footer__text footer__text--muted">Б25Д309</span>
+      </div>
+      <div class="footer__group">
+        <span class="footer__text footer__text--muted">Кураторы:</span>
+        <span class="footer__text">Зародина Дарья</span>
+        <span class="footer__text">Комкова Анна</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>

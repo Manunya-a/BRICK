@@ -1,0 +1,922 @@
+/* ==========================================================================
+   BRICK — adaptive.css
+   Медиа-запросы: 1440 (десктоп) / 1024 (планшет альбомный) /
+                   768 (планшет портретный) / 480 (мобильный)
+   ========================================================================== */
+
+/* ---------- 1440px — большой десктоп: слегка сжимаем контейнер ---------- */
+@media (max-width: 1440px) {
+  :root {
+    --container-padding: 5vw;
+    --section-padding-y: 6vw;
+  }
+
+  .hero__title {
+    max-width: 72%;
+  }
+
+  .hero__subtitle {
+    max-width: 50%;
+  }
+
+  .services__card {
+    flex: 0 0 28%;
+  }
+
+  .about-hero__content {
+    max-width: 54%;
+  }
+
+  .faq__list {
+    max-width: 88%;
+  }
+}
+
+/* ---------- 1024px — планшет альбомный ---------- */
+@media (max-width: 1024px) {
+  :root {
+    --container-padding: 4.5vw;
+  }
+
+  .header__nav-list {
+    gap: 2vw;
+  }
+
+  .hero__title {
+    max-width: 82%;
+    font-size: clamp(1.6rem, 4.2vw, 2.6rem);
+  }
+
+  .hero__subtitle {
+    max-width: 64%;
+  }
+
+  .about__body {
+    gap: 3vw;
+  }
+
+  .about__media {
+    flex: 1 1 100%;
+  }
+
+  .about__text {
+    flex: 1 1 100%;
+  }
+
+  .catalog__content {
+    gap: 2.4vw;
+  }
+
+  .catalog__title {
+    flex-basis: 26%;
+    font-size: clamp(1.3rem, 2.6vw, 1.9rem);
+  }
+
+  .catalog__desc {
+    max-width: 55%;
+  }
+
+  .services__card {
+    flex: 0 0 38%;
+  }
+
+  .contact__body {
+    gap: 3vw;
+  }
+
+  .contact__media {
+    flex: 1 1 100%;
+  }
+
+  .contact__text {
+    flex: 1 1 100%;
+  }
+
+  .about-hero__content {
+    max-width: 64%;
+    padding-left: 7vw;
+  }
+
+  .why-us__grid {
+    gap: 2.4vw;
+  }
+
+  .worries__body {
+    gap: 3vw;
+  }
+
+  .contacts-hero__text {
+    flex: 0 1 42%;
+  }
+
+  .contacts-hero__media {
+    flex: 1 1 58%;
+  }
+
+  .faq__list {
+    max-width: 100%;
+  }
+
+  .write-us__grid {
+    gap: 2.4vw;
+  }
+
+  .modal {
+    max-width: 40vw;
+  }
+}
+
+/* ---------- 768px — планшет портретный ---------- */
+@media (max-width: 768px) {
+  :root {
+    --container-padding: 6vw;
+    --section-padding-y: 10vw;
+  }
+
+  /* Хедер: бургер-меню вместо строки ссылок */
+  .header__nav {
+    position: fixed;
+    inset: 0;
+    background-color: var(--color-accent-3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8%);
+    transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s;
+    z-index: 55;
+  }
+
+  .header__nav.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .header__nav-list {
+    flex-direction: column;
+    gap: 8vw;
+  }
+
+  .header__nav-link {
+    font-size: 1.6rem;
+  }
+
+  .header__burger {
+    display: flex;
+  }
+
+  .header__burger.is-active .header__burger-line:nth-child(1) {
+    transform: translateY(0.54rem) rotate(45deg);
+  }
+
+  .header__burger.is-active .header__burger-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .header__burger.is-active .header__burger-line:nth-child(3) {
+    transform: translateY(-0.54rem) rotate(-45deg);
+  }
+
+  /* Hero */
+  .hero__title {
+    max-width: 100%;
+    font-size: clamp(1.5rem, 5.6vw, 2.2rem);
+  }
+
+  .hero__subtitle {
+    max-width: 84%;
+  }
+
+  /* О нас */
+  .about__body {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .about__cta {
+    right: 6%;
+    bottom: 6%;
+  }
+
+  /* Каталог: строки становятся карточками в столбик,
+     hover-плашки (актуальны только для курсора) на тач-устройствах отключаем,
+     заменяем лёгкой заливкой фона при active/focus — решение адаптива моё. */
+  .catalog__item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3vw;
+    padding: 6vw 0;
+  }
+
+  .catalog__content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.4vw;
+    width: 100%;
+  }
+
+  .catalog__title {
+    flex-basis: auto;
+  }
+
+  .catalog__desc {
+    max-width: 100%;
+  }
+
+  .catalog__arrow {
+    position: absolute;
+    right: 0;
+    top: 6vw;
+  }
+
+  .catalog__panel {
+    display: none;
+  }
+
+  .catalog__item:hover .catalog__content {
+    opacity: 1;
+  }
+
+  .catalog__item:active {
+    background-color: var(--color-accent-3);
+  }
+
+  /* Сервисы: карточки по 1.4 в кадре */
+  .services__card {
+    flex: 0 0 62%;
+    min-height: 46vw;
+  }
+
+  /* Связь с нами */
+  .contact__media {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .contact__photo,
+  .contact__phone {
+    flex: 1 1 auto;
+  }
+
+  /* Hero страницы "О нас": декор становится тише, чтобы не спорить с текстом —
+     решение адаптива моё, в макете для планшета/мобильного отдельной версии hero нет. */
+  .about-hero__content {
+    max-width: 100%;
+    padding-top: 10vw;
+    padding-bottom: 10vw;
+    padding-left: 2vw;
+  }
+
+  .about-hero__decor {
+    opacity: 0.6;
+  }
+
+  /* Почему мы: карточки в один столбец */
+  .why-us__grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Переживания: текст и фото в столбик, фото сверху — моё решение адаптива */
+  .worries__body {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .worries__media {
+    order: -1;
+  }
+
+  .worries__text {
+    flex: 1 1 100%;
+  }
+
+  /* Hero "Связь с нами": текст сверху, фото снизу — моё решение адаптива */
+  .contacts-hero__inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    min-height: 0;
+  }
+
+  .contacts-hero__text {
+    padding-top: 8vw;
+    padding-bottom: 4vw;
+  }
+
+  .contacts-hero__subtitle {
+    max-width: 100%;
+  }
+
+  .contacts-hero__media {
+    flex: none;
+    margin-right: calc(-1 * var(--container-padding));
+    margin-left: calc(-1 * var(--container-padding));
+  }
+
+  /* FAQ: плашки чуть компактнее по радиусу, больше воздуха внутри */
+  .faq__list {
+    gap: 3vw;
+    margin-top: 6vw;
+  }
+
+  .faq__question {
+    padding: 3.4vw 4vw;
+    gap: 3vw;
+  }
+
+  .faq__item.is-open {
+    border-radius: 4vw;
+  }
+
+  .faq__answer-text {
+    padding: 0 4vw 3.6vw;
+  }
+
+  /* Напиши нам: карточки и форма друг под другом */
+  .write-us__grid {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6vw;
+  }
+
+  .write-us__col,
+  .write-us__form-card {
+    flex: 1 1 auto;
+  }
+
+  .write-us__list {
+    margin-top: 4vw;
+    gap: 2.4vw;
+  }
+
+  .contact-card {
+    border-radius: 3vw;
+    padding: 3vw 3.6vw;
+  }
+
+  .contact-card__value {
+    margin-top: 0.8vw;
+  }
+
+  .write-us__form-card {
+    border-radius: 3.4vw;
+    padding: 5vw;
+  }
+
+  .form {
+    margin-top: 4vw;
+    gap: 2.4vw;
+  }
+
+  .form__input {
+    padding: 2.6vw 4vw;
+  }
+
+  .form__submit {
+    padding: 2.8vw 4vw;
+  }
+
+  .modal {
+    max-width: 70vw;
+    border-radius: 4vw;
+    padding: 6vw;
+  }
+
+  .modal__icon {
+    margin-bottom: 3vw;
+  }
+
+  .modal__text {
+    margin-top: 1.6vw;
+  }
+
+  .modal__close {
+    margin-top: 4vw;
+    padding: 2.4vw 6vw;
+  }
+
+  /* Футер: элементы в столбик */
+  .footer__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer__group {
+    flex-wrap: wrap;
+  }
+}
+
+/* ---------- 480px — мобильный ---------- */
+@media (max-width: 480px) {
+  :root {
+    --container-padding: 6vw;
+    --section-padding-y: 14vw;
+  }
+
+  .header__logo img {
+    width: 26vw;
+  }
+
+  .hero__inner {
+    padding-top: 10vw;
+  }
+
+  .hero__title {
+    font-size: clamp(1.35rem, 7vw, 1.9rem);
+  }
+
+  .hero__subtitle {
+    max-width: 100%;
+    font-size: 0.85rem;
+  }
+
+  .section__title {
+    font-size: clamp(1.7rem, 8vw, 2.2rem);
+  }
+
+  .about__cta {
+    position: static;
+    margin-top: 4vw;
+    align-self: flex-start;
+  }
+
+  .about__media {
+    order: -1;
+  }
+
+  .catalog__desc {
+    font-size: 0.85rem;
+  }
+
+  .services__card {
+    flex: 0 0 78%;
+    min-height: 62vw;
+    padding: 6vw;
+  }
+
+  .services__controls {
+    justify-content: center;
+  }
+
+  .contact__paragraph {
+    font-size: 0.9rem;
+  }
+
+  .footer__inner {
+    gap: 4vw;
+  }
+
+  .footer__group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2vw;
+  }
+
+  /* Hero "О нас": на самом маленьком экране декоративные уголки
+     совсем приглушаем, чтобы текст не терял читаемость — моё решение */
+  .about-hero__decor {
+    opacity: 0.35;
+  }
+
+  .about-hero__title {
+    font-size: clamp(1.4rem, 7vw, 1.9rem);
+  }
+
+  .why-card {
+    padding: 6vw;
+  }
+
+  .worries__cta {
+    right: 4%;
+    bottom: 4%;
+  }
+
+  /* Hero "Связь с нами" на мобильном */
+  .contacts-hero__title {
+    font-size: clamp(1.4rem, 7vw, 1.9rem);
+  }
+
+  /* FAQ: заголовок и плашки компактнее */
+  .faq__title {
+    font-size: clamp(1.4rem, 7vw, 1.9rem);
+  }
+
+  .faq__list {
+    gap: 4vw;
+  }
+
+  .faq__question {
+    padding: 5vw 6vw;
+    font-size: 0.9rem;
+    gap: 3vw;
+  }
+
+  .faq__icon {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+
+  /* Напиши нам: карточки и форма занимают всю ширину, моё решение */
+  .contact-card {
+    padding: 4vw 5vw;
+    border-radius: 4vw;
+  }
+
+  .write-us__form-card {
+    padding: 6vw;
+    border-radius: 5vw;
+  }
+
+  .form__input {
+    padding: 3.6vw 5vw;
+  }
+
+  .form__submit {
+    padding: 3.6vw 5vw;
+  }
+
+  .modal {
+    max-width: 88vw;
+    padding: 8vw 6vw;
+    border-radius: 6vw;
+  }
+}
+/* внутри @media (max-width: 1440px) */
+  .not-found {
+    padding-left: 9vw;
+    padding-right: 9vw;
+  }
+
+/* внутри @media (max-width: 1024px) */
+  .not-found {
+    padding-left: 8vw;
+    padding-right: 8vw;
+  }
+
+  .not-found__title,
+  .not-found__text {
+    max-width: 60vw;
+  }
+
+  .not-found__title {
+    margin-top: 2.4vw;
+  }
+
+  .not-found__text {
+    margin-top: 1.8vw;
+  }
+
+  .not-found__btn {
+    margin-top: 4.6vw;
+    padding: 1.3vw 4.6vw;
+  }
+
+/* внутри @media (max-width: 768px), перед правилами футера */
+  .not-found {
+    padding-left: 8vw;
+    padding-right: 8vw;
+  }
+
+  .not-found__code {
+    font-size: clamp(5rem, 26vw, 11rem);
+  }
+
+  .not-found__title {
+    max-width: 100%;
+    margin-top: 3.4vw;
+    font-size: clamp(1.7rem, 6.4vw, 3rem);
+  }
+
+  .not-found__text {
+    max-width: 100%;
+    margin-top: 2.6vw;
+    font-size: clamp(1.05rem, 3.6vw, 1.6rem);
+  }
+
+  .not-found__btn {
+    margin-top: 7vw;
+    padding: 2.4vw 8vw;
+    font-size: clamp(1rem, 3vw, 1.3rem);
+  }
+
+/* внутри @media (max-width: 480px), в самом конце */
+  .not-found {
+    padding: 4vw 7vw 0;
+  }
+
+  .not-found__code {
+    font-size: clamp(4.5rem, 32vw, 8rem);
+  }
+
+  .not-found__title {
+    margin-top: 5vw;
+    font-size: clamp(1.5rem, 7.4vw, 2.2rem);
+  }
+
+  .not-found__text {
+    margin-top: 3.6vw;
+    font-size: clamp(1rem, 4.4vw, 1.3rem);
+  }
+
+  .not-found__btn {
+    align-self: stretch;
+    margin-top: 9vw;
+    padding: 4vw 6vw;
+    font-size: clamp(1rem, 4.2vw, 1.2rem);
+  }
+  /* ==========================================================
+   Страница "Профиль": адаптив
+   ========================================================== */
+ 
+/* Планшет альбомный 1024 */
+@media (max-width: 1024px) {
+  :root {
+    --fs-side: 1.9vw;
+    --fs-h3: 2.8vw;
+    --fs-input: 1.9vw;
+    --fs-note-title: 1.9vw;
+    --fs-note-text: 1.5vw;
+    --page-side-left: 4vw;
+  }
+ 
+  .icon {
+    width: 2.4vw;
+  }
+ 
+  .profile {
+    gap: 3vw;
+    padding: 5vw 4vw 0;
+  }
+ 
+  .sidebar {
+    flex-basis: 29vw;
+    padding-top: 2.4vw;
+  }
+ 
+  .sidebar__user {
+    padding: 0 2.4vw;
+  }
+ 
+  .sidebar__avatar {
+    width: 12vw;
+  }
+ 
+  .sidebar__info {
+    margin-top: 2.4vw;
+  }
+ 
+  .sidebar__nav {
+    margin-top: 3.4vw;
+  }
+ 
+  .sidebar__link {
+    gap: 1.2vw;
+    min-height: 6vw;
+    padding: 1vw 2.4vw;
+  }
+ 
+  .panel {
+    padding: 3vw;
+  }
+ 
+  .panel__head {
+    margin-bottom: 2vw;
+  }
+ 
+  .panel__link {
+    top: 2.2vw;
+    right: 3vw;
+    gap: 1.4vw;
+  }
+ 
+  .profile-form {
+    gap: 2vw 0;
+  }
+ 
+  .profile-form__input,
+  .profile-form .btn {
+    height: 6vw;
+  }
+ 
+  .profile-form .btn {
+    margin-top: 1vw;
+  }
+ 
+  .notify {
+    gap: 3.6vw;
+    margin-top: 2vw;
+  }
+ 
+  .notify__title {
+    gap: 1.2vw;
+  }
+ 
+  .notify__desc {
+    padding-left: 3.6vw;
+  }
+ 
+  .switch {
+    width: 6vw;
+  }
+}
+ 
+/* Планшет портретный 768 */
+@media (max-width: 768px) {
+  :root {
+    --fs-side: 3.4vw;
+    --fs-h3: 4.8vw;
+    --fs-input: 3.4vw;
+    --fs-note-title: 3.6vw;
+    --fs-note-text: 2.8vw;
+    --page-side-left: 5vw;
+  }
+ 
+  .icon {
+    width: 4.2vw;
+  }
+ 
+  .header--blue .nav {
+    background-color: var(--color-accent-3);
+    border-bottom-color: var(--color-text);
+  }
+ 
+  .header--blue .header__burger-bar,
+  .header--blue .header__burger-bar::before,
+  .header--blue .header__burger-bar::after {
+    background-color: var(--color-text);
+  }
+ 
+  .header--blue .header__burger--open .header__burger-bar {
+    background-color: transparent;
+  }
+ 
+  /* Блок "Профиль": текст, затем картинка на всю ширину */
+  .profile-hero {
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 0;
+  }
+ 
+  .profile-hero__text {
+    flex: 0 0 auto;
+    align-self: auto;
+    padding: 5vw var(--page-side-left) 0;
+  }
+ 
+  .profile-hero__lead {
+    max-width: 100%;
+  }
+ 
+  .profile-hero__img {
+    flex: 0 0 auto;
+    width: 100%;
+    margin: 0;
+  }
+ 
+  /* Меню профиля сверху, контент под ним */
+  .profile {
+    flex-direction: column;
+    gap: 5vw;
+    padding: 6vw 5vw 0;
+  }
+ 
+  .sidebar {
+    flex: 0 0 auto;
+    padding: 4vw 0;
+    border-radius: 35px;
+  }
+ 
+  .sidebar__user {
+    display: flex;
+    align-items: center;
+    gap: 4vw;
+    padding: 0 4vw;
+  }
+ 
+  .sidebar__avatar {
+    width: 16vw;
+  }
+ 
+  .sidebar__info {
+    margin-top: 0;
+  }
+ 
+  .sidebar__nav {
+    margin-top: 4vw;
+  }
+ 
+  .sidebar__link {
+    gap: 2.4vw;
+    min-height: 11vw;
+    padding: 2vw 4vw;
+  }
+ 
+  .sidebar__link--exit {
+    margin-top: 2vw;
+  }
+ 
+  .panel {
+    padding: 4.5vw;
+    border-radius: 35px;
+  }
+ 
+  .panel__link {
+    top: 3.6vw;
+    right: 4.5vw;
+    gap: 2vw;
+  }
+ 
+  .profile-form__input,
+  .profile-form .btn {
+    height: 11vw;
+  }
+ 
+  .profile-form__input {
+    padding: 0 3.6vw;
+  }
+ 
+  .notify {
+    gap: 5vw;
+    margin-top: 3vw;
+  }
+ 
+  .notify__desc {
+    padding-left: 6.8vw;
+  }
+ 
+  .switch {
+    width: 10vw;
+  }
+}
+ 
+/* Мобильный 480 */
+@media (max-width: 480px) {
+  :root {
+    --fs-side: 4.2vw;
+    --fs-h3: 6vw;
+    --fs-input: 4.2vw;
+    --fs-note-title: 4.4vw;
+    --fs-note-text: 3.6vw;
+  }
+ 
+  .icon {
+    width: 5.4vw;
+  }
+ 
+  .profile-form {
+    gap: 3vw 0;
+  }
+ 
+  .profile-form__input,
+  .profile-form__input--wide {
+    flex-basis: 100%;
+    height: 13vw;
+  }
+ 
+  .profile-form .btn {
+    height: 13vw;
+    margin-top: 1vw;
+  }
+ 
+  .sidebar__link {
+    min-height: 13vw;
+  }
+ 
+  .sidebar__avatar {
+    width: 20vw;
+  }
+ 
+  /* Ссылка в панели уходит под заголовок и не наезжает на него */
+  .panel--blue {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+ 
+  .panel--blue .panel__title {
+    flex: 0 0 100%;
+  }
+ 
+  .panel--blue .panel__note {
+    flex: 1 1 auto;
+  }
+ 
+  .panel__link {
+    position: static;
+    margin-top: 3vw;
+    flex: 0 0 100%;
+    justify-content: flex-end;
+  }
+ 
+  .notify__desc {
+    padding-left: 0;
+  }
+ 
+  .switch {
+    width: 12vw;
+  }
+}
+ 
